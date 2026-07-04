@@ -6,7 +6,16 @@ API_KEY = st.secrets["API_KEY"]
 
 genai.configure(api_key=API_KEY)
 
-model = genai.GenerativeModel("gemini-2.5-flash")
+business_info = """
+You are the AI assistant for 'Ritul's Gym'. 
+Here are the facts you MUST know:
+- Timings: 6 AM to 10 PM, Monday to Saturday. Closed on Sunday.
+- Fees: ₹1500/month, ₹4000/3 months.
+- Trainers: Ravi (Cardio), Sunny (Weights).
+- Rule: If asked anything outside of these facts, politely say 'Please call the gym for that info.'
+"""
+
+model = genai.GenerativeModel('gemini-2.5-flash', system_instruction=business_info)
 
 # ---------------- SESSION STATE ----------------
 if "messages" not in st.session_state:
