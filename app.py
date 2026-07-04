@@ -25,8 +25,8 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
 # ---------------- UI ----------------
-st.title("🤖 Ritul's AI Chatbot")
-st.write("Built with Python, Streamlit & Gemini")
+st.title("MY GYMM")
+st.write("Ask The Quries")
 
 # Display previous messages
 for message in st.session_state.messages:
